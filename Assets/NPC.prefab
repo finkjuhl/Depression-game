@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ba46f5c62ff4f48a53e31f96bafdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114415400549901526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  en: {fileID: 1283131558567052}
+  en: {fileID: 1754417229457666, guid: 995c0bf3d9dedcd4385af7e8dc92c880, type: 2}
   eni: {fileID: 4885996245213940}
 --- !u!114 &114994814887423526
 MonoBehaviour:

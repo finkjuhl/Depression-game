@@ -22,7 +22,7 @@ public class Movements : MonoBehaviour
         if (other.tag == "Player")
         {
             GetComponent<NavMeshAgent>().enabled = true;
-            player = GameObject.FindGameObjectWithTag("Player");
+           // player = GameObject.FindGameObjectWithTag("Player");
             anim.SetFloat("left", Mathf.Sin(Time.time));
             Debug.Log("enter");
         }
@@ -30,7 +30,11 @@ public class Movements : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        nav.destination = player.transform.position;
+        if (gameObject.GetComponent<NavMeshAgent>().enabled == true)
+        {
+            nav.destination = player.transform.position;
+            Debug.Log("Staying");
+        }
     }
 
     private void OnTriggerExit(Collider other)
