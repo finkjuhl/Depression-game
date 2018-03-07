@@ -17,9 +17,16 @@ public class Movements : MonoBehaviour
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
     }
-
+    //fixed update is normally used only when physics is involved
     private void FixedUpdate()
     {
+        //this is cleaner:
+        if (Vector3.Distance(transform.position, player.transform.position) < distanceOffset)
+        {
+            //do something, but keep in mind the Y value is also considered in distanceOffset
+            //in which case you maybe use local copies of positions above, setting Y to zero
+        }
+
         if (gameObject.transform.position.x - player.transform.position.x < distanceOffset
          && gameObject.transform.position.z - player.transform.position.z < distanceOffset)       
         {
