@@ -21,13 +21,13 @@ public class Movements : MonoBehaviour
     private void FixedUpdate()
     {
         if (gameObject.transform.position.x - player.transform.position.x < distanceOffset
-            && gameObject.transform.position.z - player.transform.position.z < distanceOffset)
+         && gameObject.transform.position.z - player.transform.position.z < distanceOffset)       
         {
             GetComponent<NavMeshAgent>().enabled = true;
             // player = GameObject.FindGameObjectWithTag("Player");
             anim.SetFloat("left", Mathf.Sin(Time.time));
             nav.destination = player.transform.position;
-           // Debug.Log("Following");
+            Debug.Log("Following");
         }
     }
 
