@@ -178,7 +178,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -194,7 +193,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -212,7 +210,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -228,7 +225,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -294,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ba46f5c62ff4f48a53e31f96bafdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
 --- !u!114 &114585776097060038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   en: {fileID: 1754417229457666}
-  eni: {fileID: 4893397200832914}
+  eni: {fileID: 4885996245213940, guid: 1b0218f2c912d3941bc4149e9d7cb763, type: 2}
 --- !u!114 &114872981148477636
 MonoBehaviour:
   m_ObjectHideFlags: 1

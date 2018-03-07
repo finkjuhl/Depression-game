@@ -8,6 +8,7 @@ public class Movements : MonoBehaviour
     Animator anim;
     NavMeshAgent nav;
     public GameObject player;
+    public float distanceOffset = 5.0f;
 
     //bool animateCombat = false;
 
@@ -17,14 +18,27 @@ public class Movements : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
     }
 
-    void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
+    {
+        if (gameObject.transform.position.x - player.transform.position.x < distanceOffset
+            && gameObject.transform.position.z - player.transform.position.z < distanceOffset)
+        {
+            GetComponent<NavMeshAgent>().enabled = true;
+            // player = GameObject.FindGameObjectWithTag("Player");
+            anim.SetFloat("left", Mathf.Sin(Time.time));
+            nav.destination = player.transform.position;
+           // Debug.Log("Following");
+        }
+    }
+
+   /* void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             GetComponent<NavMeshAgent>().enabled = true;
            // player = GameObject.FindGameObjectWithTag("Player");
             anim.SetFloat("left", Mathf.Sin(Time.time));
-            Debug.Log("enter");
+            Debug.Log(other.tag);
         }
     }
 
