@@ -18,11 +18,13 @@ public class Health : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+
+        //BAD NAME! "Enemy" is correct ;)
         if (collision.gameObject.tag == "Enimy")
         {
             health -= 10;
 
-            Debug.Log("rij");
+            Debug.Log("rij"); //?? 
 
             if (health == 0)
             {

@@ -18,8 +18,11 @@ public class BulletController : MonoBehaviour
         }
     }
 
+    //I HATE THIS!! You need to really know why you want to use an IEnumerator before you actually use one
+    //and IEnumerator is the most poorly named interface for thread processing that I have ever seen
     IEnumerator Fire()
     {
+        
         if (fireRateBool == true)
         {
             fireRateBool = false;
