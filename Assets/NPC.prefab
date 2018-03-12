@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 136223002272561022}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Enimy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,7 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ba46f5c62ff4f48a53e31f96bafdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   distanceOffset: 10
 --- !u!114 &114487584986285416
 MonoBehaviour:
