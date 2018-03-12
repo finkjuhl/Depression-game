@@ -54,9 +54,12 @@ public class Health : MonoBehaviour
         {
             TakeDamage(10);
 
-            playerCamera.GetComponent<VignetteAndChromaticAberration>().chromaticAberration += 0.45f;
-
-            Debug.Log("hit"); //?? 
+            if (health == 90)
+            {
+                playerCamera.GetComponent<VignetteAndChromaticAberration>().chromaticAberration += 0.45f;
+                playerCamera.GetComponent<VignetteAndChromaticAberration>().intensity += 0.006f;
+                playerCamera.GetComponent<VignetteAndChromaticAberration>().blur += 0.005f;
+            }
 
             if (health == 0)
             {

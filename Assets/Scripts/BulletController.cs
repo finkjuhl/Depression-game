@@ -8,7 +8,8 @@ public class BulletController : MonoBehaviour
     public Transform bulletSpawn;
     public bool fireRateBool = true;
     public float velocity = 16;
-    public float timer;
+
+    private float timer;
     private float fireRate = 0.3f;
 
     private void Start()

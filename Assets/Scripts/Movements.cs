@@ -35,7 +35,6 @@ public class Movements : MonoBehaviour
             
             anim.SetFloat("left", Mathf.Sin(Time.time));
             nav.destination = player.transform.position;
-            Debug.Log("Following");
         }
     }
 
