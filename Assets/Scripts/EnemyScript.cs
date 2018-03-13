@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public const int maxHealth = 10;
+    public const int maxHealth = 100;
     public int health = maxHealth;
 
     //BAD NAMES!! Name them something you will remember, 
@@ -15,11 +15,6 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
-        if (health <= 0)
-        {
-            //health less than zero, dead yes???
-            health = 0;
-        }
     }
 
     void OnCollisionEnter(Collision collision)

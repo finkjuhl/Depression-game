@@ -17,7 +17,6 @@ public class TagHit : MonoBehaviour
     {
 		if(collision.gameObject.tag == "Enimy")
         {
-
             //particle.Play();
             Destroy(gameObject);
         }

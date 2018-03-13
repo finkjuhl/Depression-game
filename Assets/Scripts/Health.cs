@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityStandardAssets.ImageEffects;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+
 
 public class Health : MonoBehaviour
 {
@@ -13,12 +14,17 @@ public class Health : MonoBehaviour
     public GameObject sliderUI;
 
     public bool healthDamage = true;
+    public bool healthHeal = false;
 
-    public float timer;
-    public float waitTime;
+    private float timer;
+    private float waitTime;
+
+    private float HPTimer;
+    private float HPWait;
 
     private void Start()
     {
+        HPTimer = Time.time;
         timer = Time.time;
         health = maxHealth;
     }
@@ -29,20 +35,18 @@ public class Health : MonoBehaviour
         {
             health -= amount;
 
-            //access the slider
-            sliderUI.GetComponent<Slider>().value = health;
-
             if (health <= 0)
             {
                 health = 0;
             }
-
             healthDamage = false;
-        }
+        }   
     }
 
     private void Update()
     {
+        sliderUI.GetComponent<Slider>().value = health;
+
         if (Time.time - timer > waitTime)
         {
             timer = Time.time;
@@ -50,11 +54,23 @@ public class Health : MonoBehaviour
 
             healthDamage = true;
         }
+
+        if (Time.time - HPTimer > HPWait)
+        {
+            HPTimer = Time.time;
+            HPWait = 9.0f;
+
+            healthHeal = true;
+
+            if (health < maxHealth)
+            {
+                health += 10;
+            }
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-
         //BAD NAME! "Enemy" is correct ;)
         if (collision.gameObject.tag == "Enemy")
         {
