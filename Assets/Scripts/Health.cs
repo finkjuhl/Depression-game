@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityStandardAssets.ImageEffects;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public const int maxHealth = 100;
-    public int health = maxHealth;
+    public const float maxHealth = 100;
+    public float health = 100;
 
     public GameObject playerCamera;
+    public GameObject sliderUI;
 
     public bool healthDamage = true;
 
@@ -18,6 +20,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         timer = Time.time;
+        health = maxHealth;
     }
 
     public void TakeDamage(int amount)
@@ -25,6 +28,9 @@ public class Health : MonoBehaviour
         if (healthDamage)
         {
             health -= amount;
+
+            //access the slider
+            sliderUI.GetComponent<Slider>().value = health;
 
             if (health <= 0)
             {
@@ -53,13 +59,12 @@ public class Health : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             TakeDamage(10);
+            playerCamera.GetComponent<VignetteAndChromaticAberration>().chromaticAberration = ((maxHealth - health) / 100)*45;
+            playerCamera.GetComponent<VignetteAndChromaticAberration>().intensity = ((maxHealth - health) / 100.0f) * 0.6f;
+            playerCamera.GetComponent<VignetteAndChromaticAberration>().blur = ((maxHealth - health) / 100.0f) * 0.5f;
 
-            if (health == 90)
-            {
-                playerCamera.GetComponent<VignetteAndChromaticAberration>().chromaticAberration += 0.45f;
-                playerCamera.GetComponent<VignetteAndChromaticAberration>().intensity += 0.006f;
-                playerCamera.GetComponent<VignetteAndChromaticAberration>().blur += 0.005f;
-            }
+            playerCamera.GetComponent<Fisheye>().strengthX = ((maxHealth - health) / 100.0f) * 0.5f;
+            playerCamera.GetComponent<Fisheye>().strengthY = ((maxHealth - health) / 100.0f) * 0.5f;
 
             if (health == 0)
             {
