@@ -8,7 +8,7 @@ public class Movements : MonoBehaviour
     Animator anim;
     NavMeshAgent nav;
     GameObject player;
-    public float distanceOffset = 5.0f;
+    public float distanceOffset = 10.0f;
 
     //bool animateCombat = false;
 

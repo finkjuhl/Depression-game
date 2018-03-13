@@ -75,6 +75,8 @@ public class Health : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             TakeDamage(10);
+
+            //needs to go upwards too
             playerCamera.GetComponent<VignetteAndChromaticAberration>().chromaticAberration = ((maxHealth - health) / 100)*45;
             playerCamera.GetComponent<VignetteAndChromaticAberration>().intensity = ((maxHealth - health) / 100.0f) * 0.6f;
             playerCamera.GetComponent<VignetteAndChromaticAberration>().blur = ((maxHealth - health) / 100.0f) * 0.5f;
@@ -84,7 +86,7 @@ public class Health : MonoBehaviour
 
             if (health == 0)
             {
-                //death
+                //death, make a restart function
             }
         }
     }
