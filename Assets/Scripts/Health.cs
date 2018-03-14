@@ -41,6 +41,11 @@ public class Health : MonoBehaviour
         {
             health -= amount;
 
+            if (health < 0)
+            {
+                health = 0;
+            }
+
             healthDamage = false;
         }   
     }
