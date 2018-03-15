@@ -80,7 +80,7 @@ public class Health : MonoBehaviour
     void CameraChange()
     {
         playerCamera.GetComponent<VignetteAndChromaticAberration>().chromaticAberration = ((maxHealth - health) / 100) * 45;
-        playerCamera.GetComponent<VignetteAndChromaticAberration>().intensity = ((maxHealth - health) / 100.0f) * 0.6f;
+        playerCamera.GetComponent<VignetteAndChromaticAberration>().intensity = ((maxHealth - health) / 100.0f) * 0.7f;
         playerCamera.GetComponent<VignetteAndChromaticAberration>().blur = ((maxHealth - health) / 100.0f) * 0.5f;
 
         playerCamera.GetComponent<Fisheye>().strengthX = ((maxHealth - health) / 100.0f) * 0.5f;

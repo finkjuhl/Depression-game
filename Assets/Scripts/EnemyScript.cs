@@ -19,9 +19,7 @@ public class EnemyScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-
-        //this is where the bullet hits the big npc, and makes little ones?
-        
+        //this is where the bullet hits the big npc, and makes little ones?     
         //you can instantiate, but often it is better to have them simply hidden,
         //but already active. very important in a mobile game with limited resources
         if (collision.gameObject.tag == "Pill")

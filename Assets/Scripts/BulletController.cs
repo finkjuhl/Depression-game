@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BulletController : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class BulletController : MonoBehaviour
     public Transform bulletSpawn;
     public bool fireRateBool = true;
     public float velocity = 16;
+
+    public int ammo = 0;
+    public Text uitext;
 
     private float timer;
     private float fireRate = 0.3f;
@@ -30,6 +34,11 @@ public class BulletController : MonoBehaviour
             fireRateBool = true;
             timer = Time.time;
         }
+
+        if (uitext != null)
+        {
+            uitext.text = ammo.ToString();
+        }
     }
 
     //I HATE THIS!! You need to really know why you want to use an IEnumerator before you actually use one
@@ -39,6 +48,8 @@ public class BulletController : MonoBehaviour
         var bullet = (GameObject)Instantiate (bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * velocity;
+
+        ammo += 1;
 
         Destroy(bullet, 3.0f);
     }
