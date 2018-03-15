@@ -15,7 +15,7 @@ public class TagHit : MonoBehaviour
 	//Update is called once per frame
 	void OnCollisionEnter(Collision collision)
     {
-		if(collision.gameObject.tag == "Enimy")
+		if(collision.gameObject.tag == "Enemy")
         {
             //particle.Play();
             Destroy(gameObject);
