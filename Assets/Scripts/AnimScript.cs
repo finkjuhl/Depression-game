@@ -13,7 +13,6 @@ public class AnimScript : MonoBehaviour
 
 	void Update ()
     {
-        anim.SetFloat("forward", Mathf.Sin(Time.time));
-        anim.SetFloat("forward", Mathf.Cos(Time.time));
+        anim.SetFloat("Idle", Mathf.Sin(Time.time));
     }
 }

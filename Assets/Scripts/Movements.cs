@@ -8,9 +8,10 @@ public class Movements : MonoBehaviour
     Animator anim;
     NavMeshAgent nav;
     GameObject player;
+
     public float distanceOffset = 10.0f;
 
-    //bool animateCombat = false;
+    bool animateCombat = false;
 
     void Start()
     {
@@ -26,7 +27,7 @@ public class Movements : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().enabled = true;
             
-            anim.SetFloat("left", Mathf.Sin(Time.time));
+            anim.SetFloat("Attack", Mathf.Sin(Time.time));
             nav.destination = player.transform.position;
         }
     }
