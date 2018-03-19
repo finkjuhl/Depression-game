@@ -9,8 +9,6 @@ public class EnemyScript : MonoBehaviour
 
     Animation anim;
 
-    //BAD NAMES!! Name them something you will remember, 
-    //and something that a new team member might understand
     public GameObject size;
     public Transform position;
 
@@ -26,9 +24,6 @@ public class EnemyScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        //this is where the bullet hits the big npc, and makes little ones?     
-        //you can instantiate, but often it is better to have them simply hidden,
-        //but already active. very important in a mobile game with limited resources
         if (collision.gameObject.tag == "Pill")
         {
             health -= 10;

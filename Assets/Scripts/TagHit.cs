@@ -6,13 +6,11 @@ public class TagHit : MonoBehaviour
 {
     //private ParticleSystem particle;
 
-	//Use this for initialization
 	void Awake ()
     {
         //particle = GetComponent<ParticleSystem>();
     }
 	
-	//Update is called once per frame
 	void OnCollisionEnter(Collision collision)
     {
 		if(collision.gameObject.tag == "Enemy")

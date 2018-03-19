@@ -89,7 +89,6 @@ public class Health : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        //BAD NAME! "Enemy" is correct ;)
         if (collision.gameObject.tag == "Enemy")
         {
             TakeDamage(meleeDmg);

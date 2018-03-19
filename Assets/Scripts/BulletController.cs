@@ -8,13 +8,13 @@ public class BulletController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public bool fireRateBool = true;
-    public float velocity = 16;
+    public float velocity = 14;
 
     public int ammo = 0;
     public Text uitext;
 
     private float timer;
-    private float fireRate = 0.3f;
+    private float fireRate = 0.2f;
 
     private void Start()
     {
@@ -41,8 +41,6 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    //I HATE THIS!! You need to really know why you want to use an IEnumerator before you actually use one
-    //and IEnumerator is the most poorly named interface for thread processing that I have ever seen
     void Fire()
     {           
         var bullet = (GameObject)Instantiate (bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);

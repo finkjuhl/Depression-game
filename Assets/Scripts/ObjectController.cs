@@ -1,15 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ObjectController : MonoBehaviour
 {
     public GameObject buttonText;
     public GameObject Phone;
 
+    private float timer;
+
+    public float waitTime = 3.0f;
+
+    private bool timerActive = false;
+
     bool buttonCollide = false;
     bool buttonPressed = false;
+
+    private void Start()
+    {
+        timer = Time.time;
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,9 +33,20 @@ public class ObjectController : MonoBehaviour
         {
             buttonPressed = true;
             Phone.GetComponent<AudioSource>().Play();
+
+            timerActive = true;         
+        }
+
+        if (timerActive)
+        {
+            timer += 1 * Time.deltaTime;
+
+            if (timer > waitTime)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
-
     void OnTriggerExit(Collider other)
     {
         buttonCollide = false;
