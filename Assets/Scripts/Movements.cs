@@ -5,17 +5,17 @@ using UnityEngine.AI;
 
 public class Movements : MonoBehaviour
 {
-    Animator anim;
+   // Animator anim;
     NavMeshAgent nav;
     GameObject player;
 
     public float distanceOffset = 10.0f;
 
-    bool animateCombat = false;
+    //bool animateCombat = false;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+       // anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -27,7 +27,7 @@ public class Movements : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().enabled = true;
             
-            anim.SetFloat("Attack", Mathf.Sin(Time.time));
+           // anim.SetFloat("Attack", Mathf.Sin(Time.time));
             nav.destination = player.transform.position;
         }
     }

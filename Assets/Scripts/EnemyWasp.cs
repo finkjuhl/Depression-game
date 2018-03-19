@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyWasp : MonoBehaviour
 {
     public const int maxHealth = 100;
     public int health = maxHealth;
@@ -44,14 +44,14 @@ public class EnemyScript : MonoBehaviour
             }
         }
 
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            anim.Play("Slap");
+            anim.Play("Sting");
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        anim.Play("Crawl");
+        anim.Play("Flying");
     }
 }
