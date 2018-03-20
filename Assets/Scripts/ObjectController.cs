@@ -9,7 +9,7 @@ public class ObjectController : MonoBehaviour
 
     private float timer;
 
-    public float waitTime = 3.0f;
+    public float waitTime = 16.0f;
 
     private bool timerActive = false;
 
@@ -39,7 +39,7 @@ public class ObjectController : MonoBehaviour
 
         if (timerActive)
         {
-            timer += 1 * Time.deltaTime;
+            timer += 0.5f * Time.deltaTime;
 
             if (timer > waitTime)
             {
